@@ -18,6 +18,10 @@ config/icon="res://Assets/icon.svg"
 
 Global="*uid://b4mavt5ak61ou"
 
+[global_group]
+
+Food=""
+
 [input]
 
 Up={

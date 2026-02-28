@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cm57ou8hbub38"]
+
+[ext_resource type="Texture2D" uid="uid://h5kvnr3dqf5i" path="res://Assets/icon.svg" id="1_luin1"]
+[ext_resource type="Script" uid="uid://cswsulvd5ieby" path="res://Scripts/food.gd" id="1_qc5lh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pslia"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=154017108 groups=["Food"]]
+script = ExtResource("1_qc5lh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1144190684 groups=["Food"]]
+shape = SubResource("CircleShape2D_pslia")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1347219512]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_luin1")

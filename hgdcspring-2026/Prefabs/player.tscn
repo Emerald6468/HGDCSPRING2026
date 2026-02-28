@@ -5,6 +5,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hcmq4"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wxv7"]
+
 [node name="Player" type="CharacterBody2D" unique_id=312849989]
 script = ExtResource("1_5wxv7")
 
@@ -24,3 +26,11 @@ offset = Vector2(76, 8)
 [node name="Marker2D" type="Marker2D" parent="Eyeball" unique_id=1673145666]
 position = Vector2(472, -4)
 scale = Vector2(4, 4)
+
+[node name="Pickup" type="Area2D" parent="." unique_id=692737629]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" unique_id=1002173547]
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_5wxv7")
+
+[connection signal="body_entered" from="Pickup" to="." method="_on_pickup_body_entered"]

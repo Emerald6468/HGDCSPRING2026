@@ -4,8 +4,8 @@ extends CharacterBody2D
 @export var speed = 400
 
 #size
-@export var starting_size = 3
-var size = starting_size
+@export var starting_size = 3.0
+var size:float = starting_size
 
 #projectiles
 @onready var projectile_scene = preload("res://Prefabs/projectile.tscn")
@@ -17,6 +17,8 @@ var projectile_speed = 10
 @onready var eyeball: Sprite2D = $Eyeball
 @onready var marker_2d: Marker2D = $Eyeball/Marker2D
 
+#pickup
+@onready var pickup: Area2D = $Pickup
 
 #reads inputs
 func get_input():
@@ -34,15 +36,35 @@ func create_projectile():
 	if just_clicked:
 		just_clicked = false
 		print("projectile")
-		var projectile = projectile_scene.instantiate()
-		owner.add_child(projectile)
-		projectile.transform = marker_2d.global_transform
+		if size > 1:
+			size-=1
+			var projectile = projectile_scene.instantiate()
+			owner.add_child(projectile)
+			projectile.transform = marker_2d.global_transform
 	
 	
 func look_toward_mouse():
 	eyeball.look_at(target)
+	
+
+
 #runs every tick
 func _physics_process(_delta):
 	get_input()
 	look_toward_mouse()
 	move_and_slide()
+	update_size()
+	
+
+#update size
+func update_size():
+	scale.x = size/10
+	scale.y = size/10
+
+
+#collision
+func _on_pickup_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Food"):
+		size += body.food_points
+		print(size)
+		body.queue_free()

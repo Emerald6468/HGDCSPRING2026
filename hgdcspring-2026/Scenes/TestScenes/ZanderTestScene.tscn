@@ -1,7 +1,20 @@
 [gd_scene format=3 uid="uid://c8c25gfq6j0io"]
 
 [ext_resource type="PackedScene" uid="uid://b8fcwku4ueodi" path="res://Prefabs/player.tscn" id="1_fgtlt"]
+[ext_resource type="PackedScene" uid="uid://cm57ou8hbub38" path="res://Prefabs/food.tscn" id="2_fgtlt"]
 
 [node name="ZanderTestScene" type="Node2D" unique_id=1233433870]
 
 [node name="Player" parent="." unique_id=312849989 instance=ExtResource("1_fgtlt")]
+
+[node name="Food" parent="." unique_id=1305610377 instance=ExtResource("2_fgtlt")]
+position = Vector2(784, 406)
+
+[node name="Food2" parent="." unique_id=1877383375 instance=ExtResource("2_fgtlt")]
+position = Vector2(436, 484)
+
+[node name="Food3" parent="." unique_id=2008433044 instance=ExtResource("2_fgtlt")]
+position = Vector2(580, 189)
+
+[node name="Food4" parent="." unique_id=1411352728 instance=ExtResource("2_fgtlt")]
+position = Vector2(146, 439)
