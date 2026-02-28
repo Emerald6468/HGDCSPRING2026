@@ -1,11 +1,14 @@
-extends CanvasLayer
+class_name GameOver extends CanvasLayer
+
+@onready var score: Label = %ScoreLabel
+@onready var high_score: Label = %HighScoreLabel
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func set_score(n:int):
+	score.text = "Final Score: " + str(n)
+	if n > Global.save_data.high_score:
+		high_score.visible = true
+		Global.save_data.high_score
+		Global.save_data.save()
+	else:
+		high_score.visible = false
