@@ -7,8 +7,8 @@ shader = ExtResource("1_i8r30")
 shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
 shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
 shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
-shader_parameter/distortion_speed = 2.0
-shader_parameter/tile = Vector2(0.3, 0.295)
+shader_parameter/distortion_speed = 1.9849999999999999
+shader_parameter/tile = Vector2(0.5, 0.5)
 shader_parameter/offset = Vector2(0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=923685990]
@@ -25,6 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1031846880]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
