@@ -1,28 +1,45 @@
 [gd_scene format=3 uid="uid://bq7gu2cncxtlm"]
 
 [ext_resource type="Script" uid="uid://d3watskox20lm" path="res://Scripts/scene_manager.gd" id="1_f6isn"]
+[ext_resource type="Shader" uid="uid://bhxkq80t5ks6e" path="res://Assets/Shaders/transition.gdshader" id="2_ebsso"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hjya1"]
+shader = ExtResource("2_ebsso")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 0
+shader_parameter/position = Vector2(0, 0)
+shader_parameter/invert = false
+shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/global_x_mirror = false
+shader_parameter/global_y_mirror = false
+shader_parameter/local_x_mirror = false
+shader_parameter/local_y_mirror = false
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/cumulative_stagger_flip = false
+shader_parameter/cumulative_stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 0.0
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 6
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(0, 0)
 
 [sub_resource type="Animation" id="Animation_1ve8r"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionColor:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_f6isn"]
 resource_name = "transition_out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionColor:modulate")
+tracks/0/path = NodePath("Overlay:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -41,8 +58,9 @@ _data = {
 [node name="SceneManager" type="CanvasLayer" unique_id=1936089639]
 script = ExtResource("1_f6isn")
 
-[node name="TransitionColor" type="ColorRect" parent="." unique_id=640821384]
+[node name="Overlay" type="ColorRect" parent="." unique_id=640821384]
 modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_hjya1")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -50,5 +68,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TransitionAnimation" type="AnimationPlayer" parent="." unique_id=181416617]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1440720442]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer" unique_id=181416617]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_1ve8r")
+
+[connection signal="animation_finished" from="MarginContainer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

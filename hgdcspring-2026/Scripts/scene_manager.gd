@@ -1,17 +1,37 @@
 extends CanvasLayer
 
-@onready var animation: AnimationPlayer = $TransitionAnimation
-var last_scene_name: String
+signal transitioned_in()
+signal transitioned_out()
 
-var scene_dir_path = "res://Scenes/Game_Scenes/"
+@onready var animation_player: AnimationPlayer = $TransitionAnimation
+@onready var margin_container: MarginContainer = $MarginContainer
 
-func change_scene(from, to_scene_name: String) -> void:
-	last_scene_name = from.name
+func transition_in() -> void:
+	animation_player.play("in")
 	
-	animation.play("transition_out")
-	await animation.animation_finished
+
+func transition_out() -> void:
+	create_tween().tween_property(margin_container, "scale", Vector2.ZERO, 0.3)
+	animation_player.play("out")
+
+func transition_to(scene: String) -> void:
+	transition_in()
+	await transitioned_in()
 	
-	var full_path = scene_dir_path + to_scene_name + ".tscn"
-	from.get_tree().call_deferred("change_scene_to_file", full_path)
+	var new_scene = load(scene).instantiate()
+	var root: Window = get_tree().get_root()
 	
-	animation.play_backwards("transition_out")
+	root.get_child(root.get_child_count() - 1).free()
+	root.add_child(new_scene)
+	
+	new_scene.load_scene	()
+	await new_scene.loaded
+	
+	new_scene.activate()
+
+func _on_animation_player_animation_finished(anim_name: String) -> void:
+	if anim_name == "in":
+		animation_player.play("pulse_text")
+		transitioned_in.emit()
+	elif anim_name == "out":
+		transitioned_out.emit()
