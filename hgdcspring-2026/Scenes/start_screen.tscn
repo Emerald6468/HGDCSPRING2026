@@ -1,6 +1,28 @@
 [gd_scene format=3 uid="uid://cecmkwt456bd1"]
 
+[ext_resource type="Shader" uid="uid://c63hg8ua52hv1" path="res://Assets/Shaders/background_waves.gdshader" id="1_i8r30"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ainjc"]
+shader = ExtResource("1_i8r30")
+shader_parameter/bottom_color = Color(0.05490196, 0.05490196, 0.8745098, 1)
+shader_parameter/top_color = Color(0.16749686, 0.5541285, 0.9999706, 1)
+shader_parameter/wave_amp = 0.286000013585
+shader_parameter/wave_size = 1.0
+shader_parameter/wave_time_mul = 0.35100001341262
+shader_parameter/total_phases = 5
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=923685990]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=766178515]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2099863964]
+material = SubResource("ShaderMaterial_ainjc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1031846880]
 anchors_preset = 15
