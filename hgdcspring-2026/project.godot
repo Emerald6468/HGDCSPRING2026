@@ -20,6 +20,10 @@ config/icon="res://Assets/icon.svg"
 Global="*uid://b4mavt5ak61ou"
 SceneManager="*uid://bq7gu2cncxtlm"
 
+[global_group]
+
+Food=""
+
 [input]
 
 Up={
