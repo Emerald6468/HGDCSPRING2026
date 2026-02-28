@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://cecmkwt456bd1"]
 
-[ext_resource type="Shader" uid="uid://c63hg8ua52hv1" path="res://Assets/Shaders/background_waves.gdshader" id="1_i8r30"]
+[ext_resource type="Shader" uid="uid://bwhjv8ci8hhgj" path="res://Assets/Shaders/toon_waves.gdshader" id="1_i8r30"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ainjc"]
 shader = ExtResource("1_i8r30")
-shader_parameter/bottom_color = Color(0.05490196, 0.05490196, 0.8745098, 1)
-shader_parameter/top_color = Color(0.16749686, 0.5541285, 0.9999706, 1)
-shader_parameter/wave_amp = 0.286000013585
-shader_parameter/wave_size = 1.0
-shader_parameter/wave_time_mul = 0.35100001341262
-shader_parameter/total_phases = 5
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(0.3, 0.295)
+shader_parameter/offset = Vector2(0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=923685990]
 
