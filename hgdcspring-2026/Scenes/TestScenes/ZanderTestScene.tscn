@@ -1,18 +1,10 @@
 [gd_scene format=3 uid="uid://c8c25gfq6j0io"]
 
-[ext_resource type="Script" uid="uid://bv5pojk2ilmtf" path="res://Scripts/player.gd" id="1_fgtlt"]
-[ext_resource type="Texture2D" uid="uid://h5kvnr3dqf5i" path="res://Assets/icon.svg" id="2_horxc"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hcmq4"]
+[ext_resource type="PackedScene" uid="uid://b8fcwku4ueodi" path="res://Prefabs/player.tscn" id="1_fgtlt"]
+[ext_resource type="PackedScene" uid="uid://bstkmrpumbe3o" path="res://Prefabs/projectile.tscn" id="2_horxc"]
 
 [node name="ZanderTestScene" type="Node2D" unique_id=1233433870]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1233219197]
-script = ExtResource("1_fgtlt")
+[node name="Player" parent="." unique_id=312849989 instance=ExtResource("1_fgtlt")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=88811930]
-shape = SubResource("CircleShape2D_hcmq4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1814671392]
-position = Vector2(1060, 428)
-texture = ExtResource("2_horxc")
+[node name="Projectile" parent="." unique_id=1000555503 instance=ExtResource("2_horxc")]
