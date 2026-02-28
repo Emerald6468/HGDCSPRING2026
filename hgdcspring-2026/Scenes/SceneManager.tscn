@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bq7gu2cncxtlm"]
+
+[ext_resource type="Script" uid="uid://d3watskox20lm" path="res://Scripts/scene_manager.gd" id="1_f6isn"]
+
+[sub_resource type="Animation" id="Animation_1ve8r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f6isn"]
+resource_name = "transition_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionColor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ve8r"]
+_data = {
+&"RESET": SubResource("Animation_1ve8r"),
+&"transition_out": SubResource("Animation_f6isn")
+}
+
+[node name="SceneManager" type="CanvasLayer" unique_id=1936089639]
+script = ExtResource("1_f6isn")
+
+[node name="TransitionColor" type="ColorRect" parent="." unique_id=640821384]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TransitionAnimation" type="AnimationPlayer" parent="." unique_id=181416617]
+libraries/ = SubResource("AnimationLibrary_1ve8r")
