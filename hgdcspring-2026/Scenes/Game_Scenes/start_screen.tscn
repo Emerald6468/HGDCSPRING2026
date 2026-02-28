@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cecmkwt456bd1"]
 
-[ext_resource type="Shader" uid="uid://bwhjv8ci8hhgj" path="res://Assets/Shaders/toon_waves.gdshader" id="1_i8r30"]
+[ext_resource type="Shader" uid="uid://bwhjv8ci8hhgj" path="res://Assets/Shaders/toon_waves.gdshader" id="1_on0v7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ainjc"]
-shader = ExtResource("1_i8r30")
+shader = ExtResource("1_on0v7")
 shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
 shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
 shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
-shader_parameter/distortion_speed = 1.9849999999999999
+shader_parameter/distortion_speed = 1.985
 shader_parameter/tile = Vector2(0.5, 0.5)
 shader_parameter/offset = Vector2(0, 0)
 
@@ -25,7 +25,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1031846880]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -47,3 +46,28 @@ offset_right = 258.0
 offset_bottom = 74.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Transition_Button" type="ColorRect" parent="Panel" unique_id=2106825561]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36
+anchor_top = 0.404
+anchor_right = 0.63600004
+anchor_bottom = 0.634
+offset_left = 0.27996826
+offset_top = 0.2079773
+offset_right = 0.3279419
+offset_bottom = 0.16799927
+color = Color(0, 0, 0, 1)
+
+[node name="Transition" type="Label" parent="Panel/Transition_Button" unique_id=509876346]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "TRANSITION"
+horizontal_alignment = 1
+vertical_alignment = 1
