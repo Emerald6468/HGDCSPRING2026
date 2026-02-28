@@ -12,5 +12,15 @@ script = ExtResource("1_5wxv7")
 shape = SubResource("CircleShape2D_hcmq4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=367205224]
-position = Vector2(1060, 428)
 texture = ExtResource("2_y5hcb")
+
+[node name="Eyeball" type="Sprite2D" parent="." unique_id=1454285275]
+modulate = Color(0.22989318, 0.22989318, 0.22989318, 1)
+position = Vector2(-2, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_y5hcb")
+offset = Vector2(76, 8)
+
+[node name="Marker2D" type="Marker2D" parent="Eyeball" unique_id=1673145666]
+position = Vector2(472, -4)
+scale = Vector2(4, 4)

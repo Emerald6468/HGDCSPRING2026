@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://c8c25gfq6j0io"]
 
 [ext_resource type="PackedScene" uid="uid://b8fcwku4ueodi" path="res://Prefabs/player.tscn" id="1_fgtlt"]
-[ext_resource type="PackedScene" uid="uid://bstkmrpumbe3o" path="res://Prefabs/projectile.tscn" id="2_horxc"]
 
 [node name="ZanderTestScene" type="Node2D" unique_id=1233433870]
 
 [node name="Player" parent="." unique_id=312849989 instance=ExtResource("1_fgtlt")]
-
-[node name="Projectile" parent="." unique_id=1000555503 instance=ExtResource("2_horxc")]
