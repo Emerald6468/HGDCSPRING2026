@@ -1,3 +1,26 @@
 [gd_scene format=3 uid="uid://cecmkwt456bd1"]
 
-[node name="StartScreen" type="Node2D" unique_id=553727260]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=923685990]
+
+[node name="Panel" type="Panel" parent="." unique_id=1031846880]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ScoreLabel" type="Label" parent="Panel" unique_id=72194549]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -74.5
+offset_right = 258.0
+offset_bottom = 74.5
+grow_horizontal = 2
+grow_vertical = 2

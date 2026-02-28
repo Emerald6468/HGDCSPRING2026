@@ -14,6 +14,10 @@ config/name="HGDCSPRING2026"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+Global="*uid://b4mavt5ak61ou"
+
 [input]
 
 Up={
