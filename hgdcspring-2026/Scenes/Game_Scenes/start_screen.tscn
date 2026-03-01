@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cecmkwt456bd1"]
 
+[ext_resource type="Script" uid="uid://crsgdqoctfun7" path="res://Scripts/startscreen.gd" id="1_1jopm"]
 [ext_resource type="Shader" uid="uid://bwhjv8ci8hhgj" path="res://Assets/Shaders/toon_waves.gdshader" id="1_on0v7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ainjc"]
@@ -12,6 +13,8 @@ shader_parameter/tile = Vector2(0.5, 0.5)
 shader_parameter/offset = Vector2(0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=923685990]
+script = ExtResource("1_1jopm")
+next_scene = "uid://drg0nbod6ecqx"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=766178515]
 layer = -1
@@ -33,41 +36,34 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ScoreLabel" type="Label" parent="Panel" unique_id=72194549]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = -74.5
-offset_right = 258.0
-offset_bottom = 74.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Transition_Button" type="ColorRect" parent="Panel" unique_id=2106825561]
+[node name="Button" type="Button" parent="Panel" unique_id=488738576]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.36
-anchor_top = 0.404
-anchor_right = 0.63600004
-anchor_bottom = 0.634
-offset_left = 0.27996826
-offset_top = 0.2079773
-offset_right = 0.3279419
-offset_bottom = 0.16799927
-color = Color(0, 0, 0, 1)
-
-[node name="Transition" type="Label" parent="Panel/Transition_Button" unique_id=509876346]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.39200002
+anchor_top = 0.44400004
+anchor_right = 0.60800004
+anchor_bottom = 0.55600005
+offset_left = -0.08401489
+offset_top = 0.28796387
+offset_right = 0.083984375
+offset_bottom = -0.2880249
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 35
 text = "TRANSITION"
-horizontal_alignment = 1
-vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Panel" unique_id=72194549]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27600002
+anchor_top = 0.185
+anchor_right = 0.72400004
+anchor_bottom = 0.41500002
+offset_left = 0.047973633
+offset_top = 0.11999512
+offset_right = -0.048034668
+offset_bottom = 0.07998657
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

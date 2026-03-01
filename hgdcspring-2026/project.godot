@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="HGDCSPRING2026"
+run/main_scene="uid://cecmkwt456bd1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
 [autoload]
 
 Global="*uid://b4mavt5ak61ou"
+SceneManager="*uid://bq7gu2cncxtlm"
 
 [global_group]
 

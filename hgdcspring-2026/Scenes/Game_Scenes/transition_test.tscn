@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://drg0nbod6ecqx"]
+
+[ext_resource type="Script" uid="uid://8wbyvba5xvxx" path="res://Scenes/Game_Scenes/transition_test.gd" id="1_ew0t7"]
+[ext_resource type="Shader" uid="uid://c63hg8ua52hv1" path="res://Assets/Shaders/background_waves.gdshader" id="1_ykjsc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ew0t7"]
+shader = ExtResource("1_ykjsc")
+shader_parameter/bottom_color = Color(0, 0, 0.76862746, 1)
+shader_parameter/top_color = Color(0, 0.40392157, 0.8352941, 1)
+shader_parameter/wave_amp = 0.042000001995
+shader_parameter/wave_size = 3.1850001037875
+shader_parameter/wave_time_mul = 0.56000002334012
+shader_parameter/total_phases = 6
+
+[node name="TransitionTest" type="Node2D" unique_id=1212372126]
+script = ExtResource("1_ew0t7")
+next_scene = null
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=768334700]
+material = SubResource("ShaderMaterial_ew0t7")
+offset_right = 1152.0
+offset_bottom = 648.0
