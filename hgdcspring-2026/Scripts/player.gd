@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed = 400
 
 #size
+var invincability_time = 2.0
 @export var starting_size = 3.0
 @export var max_size = 10.0
 var size:float = starting_size
