@@ -18,7 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 Global="*uid://b4mavt5ak61ou"
-SceneManager="*uid://d3watskox20lm"
+SceneManager="*uid://dm0tnvetenvcj"
 
 [global_group]
 

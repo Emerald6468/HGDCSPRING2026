@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dm0tnvetenvcj"]
 
 [ext_resource type="Script" uid="uid://d3watskox20lm" path="res://Scripts/scene_manager.gd" id="1_f6isn"]
-[ext_resource type="Shader" path="res://Assets/Shaders/transition.gdshader" id="2_ebsso"]
+[ext_resource type="Shader" uid="uid://ovrd5ydp8p0q" path="res://Assets/Shaders/transition.gdshader" id="2_ebsso"]
 [ext_resource type="Texture2D" uid="uid://bwvuw8tott2mf" path="res://Assets/star_fish_cutout.png" id="3_hjya1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7xrkh"]
