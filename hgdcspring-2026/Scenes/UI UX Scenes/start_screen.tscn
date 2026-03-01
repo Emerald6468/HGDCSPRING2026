@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cecmkwt456bd1"]
 
 [ext_resource type="Script" uid="uid://crsgdqoctfun7" path="res://Scripts/startscreen.gd" id="1_1jopm"]
-[ext_resource type="Shader" uid="uid://bwhjv8ci8hhgj" path="res://Assets/Shaders/toon_waves.gdshader" id="1_on0v7"]
+[ext_resource type="Shader" path="res://Assets/Shaders/toon_waves.gdshader" id="1_on0v7"]
 [ext_resource type="Texture2D" uid="uid://exmdtqoy8k5e" path="res://Assets/Split_The_Star.png" id="3_7m66f"]
 [ext_resource type="Texture2D" uid="uid://777dy5v32eyc" path="res://Assets/Button/play_button.png" id="4_nmfy6"]
+[ext_resource type="AudioStream" uid="uid://de5f2hq1lcyac" path="res://Assets/Sounds/Music/Chill1.mp3" id="5_v5mu7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ainjc"]
 shader = ExtResource("1_on0v7")
@@ -52,5 +53,10 @@ size_flags_vertical = 4
 texture_normal = ExtResource("4_nmfy6")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1453674389]
+stream = ExtResource("5_v5mu7")
+volume_db = 1.0
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
