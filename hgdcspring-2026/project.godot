@@ -24,6 +24,8 @@ SceneManager="*uid://dm0tnvetenvcj"
 
 Food=""
 Enemy=""
+PlayerProjectile=""
+EnemyProjectile=""
 
 [input]
 
