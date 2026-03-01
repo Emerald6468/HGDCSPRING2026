@@ -7,6 +7,9 @@ var deathTimer = 0
 var dead
 var direction
 var enemyType
+@onready var turtlebullet = preload("res://Assets/art/turtlebullets.png")
+@onready var squidbullet = preload("res://Assets/art/squidbullets.png")
+@onready var pufferfishbullet = preload("res://Assets/art/pufferfishbutllets.png")
 func _ready() -> void:
 	look_at(Global.player_point)
 
@@ -25,11 +28,11 @@ func _physics_process(delta):
 		direction = (Global.player_point - global_position).normalized()
 		match enemyType:
 			1:
-				$CollisionShape2D/Sprite2D.modulate = Color(1, 1, 0)
+				$CollisionShape2D/Sprite2D.texture = turtlebullet
 			2:
-				$CollisionShape2D/Sprite2D.modulate = Color(0, 1, 1)
+				$CollisionShape2D/Sprite2D.texture = squidbullet
 			3:
-				$CollisionShape2D/Sprite2D.modulate = Color(1, 0, 1)
+				$CollisionShape2D/Sprite2D.texture = pufferfishbullet
 		timer += 1
 	global_position += direction * speed * delta
 	deathTimer += 1

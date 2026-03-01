@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 @onready var projectile = preload("res://Prefabs/enemy_projectile.tscn")
 @onready var marker_2d: Marker2D = $Marker2D
-
+@onready var turtle = preload("res://Assets/art/turtlenemeyspritesheet.png")
+@onready var squid = preload("res://Assets/art/squidenemyspritesheet.png")
+@onready var pufferfish = preload("res://Assets/art/pufferfishenemyspritesheet.png")
 var rng = RandomNumberGenerator.new()
 
 var enemy_type = rng.randi_range(1, 3)
@@ -35,19 +37,19 @@ func _ready() -> void:
 			firingInterval = rng.randi_range(4, 7)
 			firingLength = 1
 			startingSpeed = 0.5
-			$CollisionShape2D/Sprite2D.modulate = Color(1, 0, 0)
+			$CollisionShape2D/Sprite2D.texture = turtle
 		2:
 			hp = 2
 			firingInterval = rng.randi_range(2, 4)
 			firingLength = .5
 			startingSpeed = 1
-			$CollisionShape2D/Sprite2D.modulate = Color(0, 1, 0)
+			$CollisionShape2D/Sprite2D.texture = squid
 		3:
 			hp = 1
 			firingInterval = rng.randf_range(0.3, 0.8)
 			firingLength = .1
 			startingSpeed = 3
-			$CollisionShape2D/Sprite2D.modulate = Color(0, 0, 1)
+			$CollisionShape2D/Sprite2D.texture = pufferfish
 	speed = startingSpeed
 
 # Checking if you're getting hit by the player's bullets

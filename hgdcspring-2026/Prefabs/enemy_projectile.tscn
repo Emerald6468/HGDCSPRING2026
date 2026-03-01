@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjp7735acj6ce"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_projectile.gd" id="1_gglcy"]
-[ext_resource type="Texture2D" uid="uid://h5kvnr3dqf5i" path="res://Assets/icon.svg" id="2_jnuqs"]
+[ext_resource type="Texture2D" uid="uid://b2xq52pcqnmoc" path="res://Assets/art/turtlebullets.png" id="2_gglcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_guspc"]
 
@@ -14,4 +14,4 @@ shape = SubResource("CircleShape2D_guspc")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1991866311]
 scale = Vector2(0.33, 0.33)
-texture = ExtResource("2_jnuqs")
+texture = ExtResource("2_gglcy")
