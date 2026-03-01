@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8c25gfq6j0io"]
 
 [ext_resource type="PackedScene" uid="uid://b8fcwku4ueodi" path="res://Prefabs/player.tscn" id="1_fgtlt"]
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_horxc"]
+[ext_resource type="Script" uid="uid://fqwi0md0to7x" path="res://Scripts/level.gd" id="1_horxc"]
 
 [node name="ZanderTestScene" type="Node2D" unique_id=1233433870]
 script = ExtResource("1_horxc")

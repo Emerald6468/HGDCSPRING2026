@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lk0jsvi1s6gu"
-path="res://.godot/imported/play_button_background.png-bea5caabc778b297c9796fba56836de2.ctex"
+uid="uid://bfg5it5k8neuj"
+path="res://.godot/imported/exit_menu_buttons.png-0e250e72724a22c3e1b828582a7e123d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/play_button_background.png"
-dest_files=["res://.godot/imported/play_button_background.png-bea5caabc778b297c9796fba56836de2.ctex"]
+source_file="res://Assets/Button/exit_menu_buttons.png"
+dest_files=["res://.godot/imported/exit_menu_buttons.png-0e250e72724a22c3e1b828582a7e123d.ctex"]
 
 [params]
 
