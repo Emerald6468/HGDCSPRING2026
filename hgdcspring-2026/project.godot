@@ -23,6 +23,7 @@ SceneManager="*uid://dm0tnvetenvcj"
 [global_group]
 
 Food=""
+Enemy=""
 
 [input]
 

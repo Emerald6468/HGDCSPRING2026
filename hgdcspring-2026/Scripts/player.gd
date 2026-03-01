@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 #size
 @export var starting_size = 3.0
+@export var max_size = 10.0
 var size:float = starting_size
 
 #projectiles
@@ -50,6 +51,7 @@ func look_toward_mouse():
 
 #runs every tick
 func _physics_process(_delta):
+	Global.player_point = global_position
 	get_input()
 	look_toward_mouse()
 	move_and_slide()
@@ -65,6 +67,11 @@ func update_size():
 #collision
 func _on_pickup_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Food"):
-		size += body.food_points
-		print(size)
-		body.queue_free()
+		if size<max_size: 
+			size += body.food_points
+			print(size)
+			body.queue_free()
+	elif body.is_in_group("Enemy"):
+		#game over
+		pass
+		#get_tree().reload_current_scene()
