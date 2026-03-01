@@ -10,9 +10,8 @@ script = ExtResource("1_qc5lh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1144190684 groups=["Food"]]
 shape = SubResource("CircleShape2D_pslia")
-disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1347219512]
-modulate = Color(0.24705882, 1, 0, 1)
+position = Vector2(9.999999, 16.999998)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_qc5lh")

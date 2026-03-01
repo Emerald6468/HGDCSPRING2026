@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://divv1lfg4api2" path="res://Assets/art/playcharacter.png" id="2_guspc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_guspc"]
+radius = 166.14752
 
 [node name="Projectile" type="Area2D" unique_id=1320557065 groups=["PlayerProjectile"]]
 script = ExtResource("1_guspc")
@@ -12,5 +13,6 @@ script = ExtResource("1_guspc")
 shape = SubResource("CircleShape2D_guspc")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1991866311]
+position = Vector2(2.9999998, 23.999998)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("2_guspc")

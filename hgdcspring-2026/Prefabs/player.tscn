@@ -21,13 +21,12 @@ texture = ExtResource("2_y5hcb")
 
 [node name="Eyeball" type="Sprite2D" parent="." unique_id=1454285275]
 modulate = Color(0.22989318, 0.22989318, 0.22989318, 1)
-position = Vector2(-4.7683716e-07, 0)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_2nftw")
-offset = Vector2(76, 8)
+offset = Vector2(36, 28)
 
 [node name="Marker2D" type="Marker2D" parent="Eyeball" unique_id=1673145666]
-position = Vector2(472, -4)
+position = Vector2(766.6666, -6.6666665)
 scale = Vector2(4, 4)
 
 [node name="Pickup" type="Area2D" parent="." unique_id=692737629]
