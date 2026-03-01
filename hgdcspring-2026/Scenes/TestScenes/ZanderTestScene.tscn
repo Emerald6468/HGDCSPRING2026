@@ -2,21 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b8fcwku4ueodi" path="res://Prefabs/player.tscn" id="1_fgtlt"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_horxc"]
-[ext_resource type="PackedScene" uid="uid://bw3nuhf8k1qsq" path="res://Prefabs/food.tscn" id="2_fgtlt"]
 
 [node name="ZanderTestScene" type="Node2D" unique_id=1233433870]
 script = ExtResource("1_horxc")
 
 [node name="Player" parent="." unique_id=312849989 instance=ExtResource("1_fgtlt")]
-
-[node name="Food" parent="." unique_id=1305610377 instance=ExtResource("2_fgtlt")]
-position = Vector2(784, 406)
-
-[node name="Food2" parent="." unique_id=1877383375 instance=ExtResource("2_fgtlt")]
-position = Vector2(436, 484)
-
-[node name="Food3" parent="." unique_id=2008433044 instance=ExtResource("2_fgtlt")]
-position = Vector2(580, 189)
-
-[node name="Food4" parent="." unique_id=1411352728 instance=ExtResource("2_fgtlt")]
-position = Vector2(146, 439)
