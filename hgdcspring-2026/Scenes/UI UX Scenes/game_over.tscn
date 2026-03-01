@@ -1,6 +1,110 @@
-[gd_scene format=3 uid="uid://cirdll5r23i6l"]
+[gd_scene format=3 uid="uid://db2gp3w68y0kw"]
 
-[ext_resource type="Script" uid="uid://bbi1ownggp1nh" path="res://Scripts/gameover.gd" id="1_ojehl"]
+[ext_resource type="Script" uid="uid://b4txfouewisjp" path="res://Scripts/game_over.gd" id="1_hutmi"]
+[ext_resource type="Shader" uid="uid://cinoxbka4frkf" path="res://Scenes/Game_Scenes/cutout.gdshader" id="2_srscr"]
+[ext_resource type="Texture2D" uid="uid://bwvuw8tott2mf" path="res://Assets/star_fish_cutout.png" id="3_twsyl"]
+[ext_resource type="Texture2D" uid="uid://bt833t5tk645q" path="res://Assets/Button/highscore_menu_buttons.png" id="4_hadw1"]
+[ext_resource type="Texture2D" uid="uid://dc52h1d3eugt2" path="res://Assets/Button/game-over_menu_buttons.png" id="5_e578f"]
+[ext_resource type="Texture2D" uid="uid://do5as6vfsyfpy" path="res://Assets/Button/restart_menu_buttons.png" id="6_gjsqc"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=271654631]
-script = ExtResource("1_ojehl")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_si5bw"]
+shader = ExtResource("2_srscr")
+shader_parameter/mask = ExtResource("3_twsyl")
+shader_parameter/scale = 0.0
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(0.5, 0.5)
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_ubbdn"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_2knoi"]
+resource_name = "fade_to_screen"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sadem"]
+_data = {
+&"RESET": SubResource("Animation_ubbdn"),
+&"fade_to_screen": SubResource("Animation_2knoi")
+}
+
+[node name="GameOver" type="CanvasLayer" unique_id=163802148]
+script = ExtResource("1_hutmi")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1920115668]
+material = SubResource("ShaderMaterial_si5bw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1764706, 0.63529414, 0.8509804, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Overlay" unique_id=1502131750]
+libraries/ = SubResource("AnimationLibrary_sadem")
+
+[node name="ScoreLabel" type="Label" parent="Overlay" unique_id=1145574543]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37500003
+anchor_top = 0.48000002
+anchor_right = 0.625
+anchor_bottom = 0.586
+offset_left = 1.9999695
+offset_top = -37.04001
+offset_right = 2.0
+offset_bottom = -36.728027
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.9216646, 0.5445483, 7.70092e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighscoreMenuButtons" type="Sprite2D" parent="." unique_id=1680744656]
+position = Vector2(579.00006, 242)
+scale = Vector2(0.11333331, 0.11333332)
+texture = ExtResource("4_hadw1")
+
+[node name="GameOverMenuButtons" type="Sprite2D" parent="." unique_id=1736032312]
+position = Vector2(582, 116.000015)
+scale = Vector2(0.21966666, 0.21966667)
+texture = ExtResource("5_e578f")
+
+[node name="Restart" type="TextureButton" parent="." unique_id=1762020422]
+offset_left = 424.0
+offset_top = 517.0
+offset_right = 728.18933
+offset_bottom = 665.0
+texture_normal = ExtResource("6_gjsqc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="animation_finished" from="Overlay/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
