@@ -14,6 +14,7 @@ shader_parameter/offset = Vector2(0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=923685990]
 script = ExtResource("1_1jopm")
+next_scene = "uid://drg0nbod6ecqx"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=766178515]
 layer = -1
