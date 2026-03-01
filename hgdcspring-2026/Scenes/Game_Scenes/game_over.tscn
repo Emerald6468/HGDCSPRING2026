@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://db2gp3w68y0kw"]
+
+[ext_resource type="Script" uid="uid://b4txfouewisjp" path="res://Scenes/Game_Scenes/game_over.gd" id="1_7oqxq"]
+[ext_resource type="Shader" uid="uid://cinoxbka4frkf" path="res://Scenes/Game_Scenes/cutout.gdshader" id="2_wb8l4"]
+[ext_resource type="Texture2D" uid="uid://bwvuw8tott2mf" path="res://Assets/star_fish_cutout.png" id="3_bgjlr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_si5bw"]
+shader = ExtResource("2_wb8l4")
+shader_parameter/mask = ExtResource("3_bgjlr")
+shader_parameter/scale = 0.0
+shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(0.5, 0.5)
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_ubbdn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2knoi"]
+resource_name = "fade_to_screen"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sadem"]
+_data = {
+&"RESET": SubResource("Animation_ubbdn"),
+&"fade_to_screen": SubResource("Animation_2knoi")
+}
+
+[node name="GameOver" type="CanvasLayer" unique_id=163802148]
+script = ExtResource("1_7oqxq")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1920115668]
+material = SubResource("ShaderMaterial_si5bw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1764706, 0.63529414, 0.8509804, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Overlay" unique_id=1502131750]
+libraries/ = SubResource("AnimationLibrary_sadem")

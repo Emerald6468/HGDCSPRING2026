@@ -1,12 +1,10 @@
-extends Node
+extends CanvasLayer
 
-var save_data:SaveData
 
-var score = 0
-var player_point: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	save_data = SaveData.load_or_create()
+	$Overlay/AnimationPlayer.play("fade_to_screen")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

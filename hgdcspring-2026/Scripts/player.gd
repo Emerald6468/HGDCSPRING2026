@@ -69,8 +69,10 @@ func _on_pickup_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Food"):
 		if size<max_size: 
 			size += body.food_points
+			Global.score += 1
 			print(size)
-			body.queue_free()
+		else: Global.score += 3
+		body.queue_free()
 	elif body.is_in_group("Enemy"):
 		#game over
 		pass

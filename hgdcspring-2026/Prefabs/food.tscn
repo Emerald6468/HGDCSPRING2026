@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cm57ou8hbub38"]
+[gd_scene format=3 uid="uid://bw3nuhf8k1qsq"]
 
 [ext_resource type="Script" uid="uid://cswsulvd5ieby" path="res://Scripts/food.gd" id="1_qc5lh"]
 [ext_resource type="Texture2D" uid="uid://m6lsytp5qspt" path="res://Assets/art/pinkpellet.png" id="2_qc5lh"]
