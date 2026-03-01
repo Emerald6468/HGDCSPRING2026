@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://crsgdqoctfun7" path="res://Scripts/startscreen.gd" id="1_1jopm"]
 [ext_resource type="Shader" uid="uid://bwhjv8ci8hhgj" path="res://Assets/Shaders/toon_waves.gdshader" id="1_on0v7"]
 [ext_resource type="Texture2D" uid="uid://exmdtqoy8k5e" path="res://Assets/Split_The_Star.png" id="3_7m66f"]
+[ext_resource type="Texture2D" uid="uid://777dy5v32eyc" path="res://Assets/play_button.png" id="4_nmfy6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ainjc"]
 shader = ExtResource("1_on0v7")
@@ -16,6 +17,8 @@ shader_parameter/offset = Vector2(0, 0)
 [node name="CanvasLayer" type="CanvasLayer" unique_id=923685990]
 script = ExtResource("1_1jopm")
 next_scene = "uid://drg0nbod6ecqx"
+tween_intensity = 1.2
+tween_duration = 0.3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=766178515]
 layer = -1
@@ -38,3 +41,14 @@ grow_horizontal = 2
 position = Vector2(579.00006, 184)
 scale = Vector2(0.2746667, 0.2746667)
 texture = ExtResource("3_7m66f")
+
+[node name="Play" type="TextureButton" parent="." unique_id=752931845]
+offset_left = 407.0
+offset_top = 311.0
+offset_right = 741.7999
+offset_bottom = 550.1429
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_nmfy6")
+ignore_texture_size = true
+stretch_mode = 0
