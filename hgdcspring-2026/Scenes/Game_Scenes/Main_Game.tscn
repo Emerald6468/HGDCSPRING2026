@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cnteftox4xt8h" path="res://Scenes/Game_Scenes/background.gd" id="3_2yxl0"]
 [ext_resource type="Shader" uid="uid://bwhjv8ci8hhgj" path="res://Assets/Shaders/toon_waves.gdshader" id="3_agw35"]
 [ext_resource type="PackedScene" uid="uid://c7jmdpb3h4tbk" path="res://Scenes/UI UX Scenes/pause_screen.tscn" id="5_pal4k"]
+[ext_resource type="PackedScene" uid="uid://db2gp3w68y0kw" path="res://Scenes/UI UX Scenes/game_over.tscn" id="6_ur6l6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_agw35"]
 shader = ExtResource("3_agw35")
@@ -32,3 +33,6 @@ position = Vector2(589, 330)
 visible = false
 tween_intensity = 1.2
 tween_duration = 0.3
+
+[node name="GameOver" parent="." unique_id=163802148 instance=ExtResource("6_ur6l6")]
+visible = false

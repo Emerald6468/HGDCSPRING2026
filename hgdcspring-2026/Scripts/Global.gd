@@ -4,6 +4,11 @@ var save_data:SaveData
 
 var score = 0
 var player_point: Vector2
+var isDead = false
+var gameRestarted = false
+var justDied = false
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	save_data = SaveData.load_or_create()

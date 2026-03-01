@@ -101,4 +101,8 @@ func _on_pickup_area_entered(area: Area2D) -> void:
 			size = 1
 			timer_on = true
 		#game over
-		elif !invincable: get_tree().reload_current_scene()
+		elif !invincable:
+			Global.isDead = true
+			Global.justDied = true
+			
+		
