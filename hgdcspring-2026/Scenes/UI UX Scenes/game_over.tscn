@@ -54,7 +54,10 @@ _data = {
 }
 
 [node name="GameOver" type="CanvasLayer" unique_id=163802148]
+process_mode = 3
 script = ExtResource("1_hutmi")
+tween_intensity = 1.2
+tween_duration = 0.3
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=1920115668]
 material = SubResource("ShaderMaterial_si5bw")

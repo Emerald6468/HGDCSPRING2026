@@ -52,3 +52,5 @@ size_flags_vertical = 4
 texture_normal = ExtResource("4_nmfy6")
 ignore_texture_size = true
 stretch_mode = 0
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
