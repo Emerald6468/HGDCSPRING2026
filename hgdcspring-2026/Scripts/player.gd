@@ -50,6 +50,7 @@ func look_toward_mouse():
 
 #runs every tick
 func _physics_process(_delta):
+	Global.player_point = global_position
 	get_input()
 	look_toward_mouse()
 	move_and_slide()

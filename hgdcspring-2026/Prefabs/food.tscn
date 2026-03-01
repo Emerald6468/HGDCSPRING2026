@@ -12,5 +12,6 @@ script = ExtResource("1_qc5lh")
 shape = SubResource("CircleShape2D_pslia")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1347219512]
+modulate = Color(0.24705882, 1, 0, 1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_luin1")
