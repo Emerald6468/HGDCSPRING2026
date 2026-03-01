@@ -2,9 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://b8fcwku4ueodi" path="res://Prefabs/player.tscn" id="1_fgtlt"]
 [ext_resource type="Script" uid="uid://fqwi0md0to7x" path="res://Scripts/level.gd" id="1_horxc"]
+[ext_resource type="AudioStream" uid="uid://44oq2bfmh3rs" path="res://Assets/Sounds/Music/House1.mp3" id="3_horxc"]
 
 [node name="ZanderTestScene" type="Node2D" unique_id=1233433870]
 script = ExtResource("1_horxc")
 
 [node name="Player" parent="." unique_id=312849989 instance=ExtResource("1_fgtlt")]
 position = Vector2(577, 317)
+
+[node name="MainSong" type="AudioStreamPlayer" parent="." unique_id=2030073061]
+stream = ExtResource("3_horxc")
+volume_db = -13.584
+autoplay = true

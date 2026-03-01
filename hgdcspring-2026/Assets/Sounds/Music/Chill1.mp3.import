@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Chill1.mp3-6b2ea5aa002a4e9d7bdd44b8b1e70fa0.m
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
