@@ -35,3 +35,11 @@ func activate() -> void:
 func load_scene() -> void:
 	await get_tree().create_timer(3.0).timeout
 	loaded.emit()
+
+
+
+
+
+
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Game_Scenes/Main_Game.tscn")

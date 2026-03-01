@@ -9,7 +9,7 @@ func _ready() -> void:
 	$Restart.visible = false
 	$Overlay/ScoreLabel.visible = false
 	$Overlay/AnimationPlayer.play("fade_to_screen")
-	var high_score:int = Global.save_data.high_score
+	var high_score:int = Global.score
 	score.text = str(high_score)
 
 
