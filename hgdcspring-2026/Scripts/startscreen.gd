@@ -4,7 +4,7 @@ signal loaded()
 
 @export_file("*.tscn") var next_scene: String
 
-@onready var score: Label = $Panel/ScoreLabel
+@onready var score: Label = $ScoreLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,9 +13,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	pass
-
-func _on_button_pressed() -> void:
-	SceneManager.transition_to(next_scene)
 
 func activate() -> void:
 	pass

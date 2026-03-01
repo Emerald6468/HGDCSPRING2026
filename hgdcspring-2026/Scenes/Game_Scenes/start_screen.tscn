@@ -9,7 +9,7 @@ shader = ExtResource("1_on0v7")
 shader_parameter/WATER_COL = Color(0.176471, 0.635294, 0.85098, 1)
 shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
 shader_parameter/FOAM_COL = Color(0.87451, 0.988235, 1, 1)
-shader_parameter/distortion_speed = 1.985
+shader_parameter/distortion_speed = 7.55
 shader_parameter/tile = Vector2(0.5, 0.5)
 shader_parameter/offset = Vector2(0, 0)
 
@@ -28,41 +28,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="." unique_id=1031846880]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Button" type="Button" parent="Panel" unique_id=488738576]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.39200002
-anchor_top = 0.44400004
-anchor_right = 0.60800004
-anchor_bottom = 0.55600005
-offset_left = -447.584
-offset_top = 291.28796
-offset_right = -447.41602
-offset_bottom = 290.71198
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 35
-text = "TRANSITION"
-
-[node name="ScoreLabel" type="Label" parent="Panel" unique_id=72194549]
-layout_mode = 1
+[node name="ScoreLabel" type="Label" parent="." unique_id=72194549]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
 [node name="SplitTheStar" type="Sprite2D" parent="." unique_id=1730653129]
-position = Vector2(191, 140)
-scale = Vector2(0.20266667, 0.20266667)
+position = Vector2(579.00006, 184)
+scale = Vector2(0.2746667, 0.2746667)
 texture = ExtResource("3_7m66f")
-
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
