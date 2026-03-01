@@ -1,11 +1,11 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
+@export var food_timer = 2.0
+@onready var food_scene = preload("res://Prefabs/food.tscn")
+#make food
+func make_food():
+	var f = food_scene.instantiate()
+	#var fx = randf_range()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
