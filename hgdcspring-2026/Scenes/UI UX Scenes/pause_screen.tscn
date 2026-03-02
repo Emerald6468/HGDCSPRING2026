@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7jmdpb3h4tbk"]
 
 [ext_resource type="Script" uid="uid://s2334gkdna0o" path="res://Scenes/UI UX Scenes/pause_screen.gd" id="1_1xivh"]
-[ext_resource type="Shader" uid="uid://bwhjv8ci8hhgj" path="res://Assets/Shaders/toon_waves.gdshader" id="2_6wsw8"]
+[ext_resource type="Shader" path="res://Assets/Shaders/toon_waves.gdshader" id="2_6wsw8"]
 [ext_resource type="Texture2D" uid="uid://dkw5litx3ui1h" path="res://Assets/Button/paused_menu_buttons.png" id="3_uh2wf"]
 [ext_resource type="Texture2D" uid="uid://barc3go40rm45" path="res://Assets/Button/resume_menu_buttons.png" id="4_guj08"]
 [ext_resource type="Texture2D" uid="uid://do5as6vfsyfpy" path="res://Assets/Button/restart_menu_buttons.png" id="5_v2juw"]

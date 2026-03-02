@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var turtle = preload("res://Assets/art/turtlenemeyspritesheet.png")
 @onready var squid = preload("res://Assets/art/squidenemyspritesheet.png")
-@onready var pufferfish = preload("res://Assets/art/pufferfishenemyspritesheet.png")
+@onready var pufferfish = preload("res://Assets/art/newpufferfishspritesheet.png")
 var rng = RandomNumberGenerator.new()
 
 var enemy_type = rng.randi_range(1, 3)

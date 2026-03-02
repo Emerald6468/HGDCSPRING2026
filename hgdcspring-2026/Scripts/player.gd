@@ -48,6 +48,7 @@ func create_projectile():
 			size-=1
 			var projectile = projectile_scene.instantiate()
 			owner.add_child(projectile)
+			$Camera2D/attack.play()
 			projectile.transform = marker_2d.global_transform
 	
 	
@@ -86,11 +87,13 @@ func _on_pickup_body_entered(body: Node2D) -> void:
 			Global.score += 1
 			print(size)
 		else: Global.score += 3
+		$Camera2D/eat.play()
 		body.queue_free()
 	elif body.is_in_group("Enemy"):
 		#game over
-		if !invincable: get_tree().reload_current_scene()
-	
+		if !invincable: 
+			Global.isDead = true
+			Global.justDied = true
 	
 
 
@@ -98,7 +101,8 @@ func _on_pickup_area_entered(area: Area2D) -> void:
 	if area.is_in_group("EnemyProjectile"):
 		print("hit")
 		if !invincable and size > 1:
-			size = 1
+			size -= 3
+			if size < 1: size = 1
 			timer_on = true
 		#game over
 		elif !invincable:

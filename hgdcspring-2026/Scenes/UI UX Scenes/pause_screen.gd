@@ -52,7 +52,7 @@ func _on_restart_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
-	get_tree().reload_current_scene()
+	resume()
 	get_tree().change_scene_to_file("res://Scenes/UI UX Scenes/start_screen.tscn")
 
 

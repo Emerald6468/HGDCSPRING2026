@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://db2gp3w68y0kw"]
 
 [ext_resource type="Script" uid="uid://b4txfouewisjp" path="res://Scripts/game_over.gd" id="1_hutmi"]
-[ext_resource type="Shader" uid="uid://cinoxbka4frkf" path="res://Scenes/Game_Scenes/cutout.gdshader" id="2_srscr"]
+[ext_resource type="Shader" path="res://Scenes/Game_Scenes/cutout.gdshader" id="2_srscr"]
 [ext_resource type="Texture2D" uid="uid://bwvuw8tott2mf" path="res://Assets/star_fish_cutout.png" id="3_twsyl"]
 [ext_resource type="Texture2D" uid="uid://bt833t5tk645q" path="res://Assets/Button/highscore_menu_buttons.png" id="4_hadw1"]
 [ext_resource type="Texture2D" uid="uid://dc52h1d3eugt2" path="res://Assets/Button/game-over_menu_buttons.png" id="5_e578f"]

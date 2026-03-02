@@ -23,6 +23,8 @@ func dead():
 	if Global.isDead:
 		if Global.justDied:
 			Global.justDied = false
+			var high_score:int = Global.score
+			score.text = str(high_score)
 			get_tree().paused = true
 			visible = true
 			$Overlay/AnimationPlayer.play("fade_to_screen")
